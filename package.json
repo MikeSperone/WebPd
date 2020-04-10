@@ -32,22 +32,22 @@
     "web-audio-boilerplate": "^0.3.0"
   },
   "devDependencies": {
-    "web-audio-test-api": "0.2.x",
-    "mocha": "1.11.x",
-    "istanbul": "0.1.x",
+    "async": "0.9.x",
+    "browserify": "7.0.x",
     "gulp": "^3.9.0",
-    "gulp-util": "3.0.x",
+    "gulp-concat": "^2.6.1",
+    "gulp-contribs": "0.0.3",
+    "gulp-file": "^0.4.0",
     "gulp-rename": "1.2.x",
     "gulp-uglify": "1.2.x",
-    "gulp-file": "0.2.x",
-    "gulp-concat": "2.5.x",
-    "browserify": "7.0.x",
+    "gulp-util": "3.0.x",
+    "istanbul": "0.1.x",
+    "mocha": "1.11.x",
     "mustache": "2.0.x",
     "run-sequence": "1.0.x",
     "vinyl-source-stream": "1.0.x",
-    "async": "0.9.x",
     "waatest": "git://github.com/sebpiq/WAATest.git#master",
-    "gulp-contribs": "0.0.3"
+    "web-audio-test-api": "0.2.x"
   },
   "license": "LGPL-3.0"
 }
