@@ -830,6 +830,51 @@ describe('glue', function() {
 
   })
 
+  describe('[route]', function() {
+    var route, mailbox1, mailbox2, mailbox3;
+
+    beforeEach(function() {
+      route = patch.createObject('select', ['foo', 'bar'])
+        , mailbox1 = patch.createObject('testingmailbox')
+        , mailbox2 = patch.createObject('testingmailbox')
+        , mailbox3 = patch.createObject('testingmailbox')
+    })
+
+    it('should create by default route', function() {
+      assert.equal(route.inlets.length, 1)
+      assert.equal(route.outlets.length, 3)
+    })
+
+    it('should route symbols', function() {
+
+      route.o(0).connect(mailbox1.i(0))
+      route.o(1).connect(mailbox2.i(0))
+      route.o(2).connect(mailbox3.i(0))
+
+      // route.i(0).message(['foo', 'hello', 'world'])
+        route.i(0).message(['hi', 'ok'])
+      console.log("mailbox1: ", mailbox1.received)
+      console.log("mailbox2: ", mailbox2.received)
+      console.log("mailbox3: ", mailbox3.received)
+      // assert.deepEqual(mailbox1.received, [['hello', 'world']])
+      // assert.deepEqual(mailbox2.received, [])
+      // assert.deepEqual(mailbox3.received, [])
+
+      // route.i(0).message(['bar', 'hello', 'world'])
+      // assert.deepEqual(mailbox1.received, [])
+      // assert.deepEqual(mailbox2.received, [['hello', 'world']])
+      // assert.deepEqual(mailbox3.received, [])
+
+      // route.i(0).message(['baz', 'hello', 'world'])
+      // assert.deepEqual(mailbox1.received, [])
+      // assert.deepEqual(mailbox2.received, [])
+      // assert.deepEqual(mailbox3.received, [['baz', 'hello', 'world']])
+    })
+
+    it('should route numbers', function() {
+    })
+  })
+
   describe('[select]', function() {
 
     it('should create by default [sel 0]', function() {
